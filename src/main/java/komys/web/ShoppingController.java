@@ -2,12 +2,10 @@ package komys.web;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import komys.domain.ItemRepository;
 import komys.domain.ShoppingItem;
-import komys.domain.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,13 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ShoppingController {	
-	
 	 
 		@Autowired
-	    private UserRepository urep; 
-		@Autowired
-	    private ItemRepository irep;
-		
+	    private ItemRepository irep;		
 		@Autowired
 	    private HttpSession session;
 		
@@ -81,6 +75,40 @@ public class ShoppingController {
 				return "redirect:../cart";
 	    }
 		
+		@RequestMapping(value="/quantityminus/{id}", method = RequestMethod.GET)
+	    public String quantityminus(@PathVariable(value="id") Long id, Model model) {
+							
+				List<ShoppingItem> cart = (List<ShoppingItem>) session.getAttribute("cart");
+				int index = isExisting(id);
+				int quantity = cart.get(index).getQuantity();
+				if (quantity > 1){
+					int q = quantity - 1;
+					cart.get(index).setQuantity(q);
+				}else{
+					cart.remove(index);
+				}			
+				
+				session.setAttribute("cart", cart);
+							
+				return "redirect:../cart";
+	    }
+		
+		@RequestMapping(value="/quantityplus/{id}", method = RequestMethod.GET)
+	    public String quantityplus(@PathVariable(value="id") Long id, Model model) {
+							
+				List<ShoppingItem> cart = (List<ShoppingItem>) session.getAttribute("cart");
+				int index = isExisting(id);
+				int quantity = cart.get(index).getQuantity();
+				
+					int q = quantity + 1;
+					cart.get(index).setQuantity(q);
+							
+				
+				session.setAttribute("cart", cart);
+							
+				return "redirect:../cart";
+	    }
+				
 }		
 	    
 	    

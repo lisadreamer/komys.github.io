@@ -95,7 +95,15 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 					<td><img th:src="${it.x.img}" alt="picture" class="cartimg" /></td>
 		    		<td th:text="${it.x.name}"></td>
 		    		<td th:text="${it.x.price}"></td>
-		    		<td th:text="${it.quantity}"></td>
+		    		<td>		
+		    			<span class="xxs">
+		    				<a th:href="@{/quantityminus/{id}(id=${it.x.id})}">-</a>
+		    			</span>
+		    			<span th:text="${it.quantity}"></span>
+		    			<span class="xxs">
+		    				<a th:href="@{/quantityplus/{id}(id=${it.x.id})}">+</a>
+		    			</span>	    			 
+		    		</td>
 		    		<td th:text="${it.x.price * it.quantity}"></td>		    				 			
 	    		</tr>	
 	    		<tr>
@@ -106,10 +114,9 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	    		</tr>	    	
 		     </table>
 		     
-		     <!-- <div class="col-lg-offset-10 col-md-offset-10 col-sm-offset-9 col-xs-offset-9">
-		     	<strong>Total:</strong>
-	    		<span th:text="${#aggregates.sum(cart.![quantity*x.price])}" th:if="${cart}!=null"></span>
-	    	 </div> -->
+	    	 <form sec:authorize="isAuthenticated()" th:action="@{/products}">				
+				<button type="submit" class="btn btn-default">CONTINUE SHOPPING</button>			
+			</form>
         </div>
     	
     </div>

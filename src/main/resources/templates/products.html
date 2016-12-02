@@ -84,9 +84,7 @@
     </div>
 </nav> 
     
-<main class="products playfair">	
-
-	
+<main class="products playfair">		
 	
 	<div class="container-fluid">
     	<div class="row" >
@@ -97,17 +95,10 @@
 	        <p th:text="${item.material.name}"></p>
 	        <p th:text="${item.weight}"></p>
 	        <p th:text="${item.price}"></p>
-	        <!-- <p th:text="${item.description}"></p> -->
+	        
 	        <a th:href="@{/ordernow/{id}(id=${item.id})}" class="btn btn-success btn-sm" sec:authorize="isAuthenticated()">Add to Cart</a>
 	        </div>	
-    	</div>
-    	<!-- 
-    	<div class="row" >
-	        <div class= "col-lg-3 col-md-4 col-sm-6 col-xs-12">
-	        <img src="images/earrings1.jpg" alt="picture of earrings" class="earringsimg"/>
-	        
-	        </div>	
-    	</div> -->
+    	</div>    	
     </div>
 	 
 </main>

@@ -1,18 +1,12 @@
 package komys.domain;
 
-//import java.util.List;
-
-//import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-//import javax.persistence.OneToMany;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import komys.domain.Type;
 
 @Entity
@@ -39,9 +33,6 @@ public class Item {
     @JoinColumn(name = "materialId")
     private Material material;
 	
-	//@OneToMany(cascade = CascadeType.ALL, mappedBy = "x")
-	//private List<ShoppingItem> shitems;
-	
 	public Item() {}
 	
 	public Item(String name, String img, Type type, Material material, double weight, String description, double price) {
@@ -54,7 +45,6 @@ public class Item {
 		this.setDescription(description);
 		this.setPrice(price);
 	}
-	
 	
 	public Long getId() {
 		return id;

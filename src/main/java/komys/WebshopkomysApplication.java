@@ -57,9 +57,6 @@ public class WebshopkomysApplication {
 			irep.save(new Item("silver earring 12", "images/earrings12.jpg", trep.findByName("Earrings").get(0),  mrep.findByName("Silver").get(0), 9.14,  "-", 59));
 			irep.save(new Item("silver earring 13", "images/earrings13.jpg", trep.findByName("Earrings").get(0),  mrep.findByName("Silver").get(0), 12.89, "-", 69));
 			
-			//irep.save(new Item("silver ring 01", "images/ring1.jpg", trep.findByName("Rings").get(0),  mrep.findByName("Silver").get(0), 5.46, "-", 29));
-			//irep.save(new Item("silver ring 02", "images/ring2.jpg", trep.findByName("Rings").get(0),  mrep.findByName("Silver").get(0), 3.88, "-", 19));
-			//irep.save(new Item("silver ring 03", "images/ring3.jpg", trep.findByName("Rings").get(0),  mrep.findByName("Silver").get(0), 4.72, "-", 25));
 			irep.save(new Item("silver ring 04", "images/ring4.jpg", trep.findByName("Rings").get(0),  mrep.findByName("Silver").get(0), 3.01, "-", 25));
 			
 			irep.save(new Item("silver pendant 01", "images/pendant1.jpg", trep.findByName("Pendant").get(0),  mrep.findByName("Silver").get(0), 5.46, "-", 29));
@@ -71,8 +68,7 @@ public class WebshopkomysApplication {
 			irep.save(new Item("silver bracelet 01", "images/bracelet1.jpg", trep.findByName("Bracelet").get(0),  mrep.findByName("Silver").get(0), 8.31, "-", 49));
 			
 			// Create users: admin/admin user/user
-			Date db = new Date();
-						
+			Date db = new Date();						
 			User admin = new User("admin", "admin", "admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN", "admin@gmail.com", "M.", db);
 			
 			urep.save(admin);
