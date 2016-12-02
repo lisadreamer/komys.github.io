@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>WebShopKomys</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Description -->
+    <meta name="description" content="WebShopProject -Komys-" />
+    <meta name="author" content="a1504523@myy.haaga-helia.fi" />
+    <meta name="copyright" content="Copyright by Elizaveta 2016" />
+
+	<!-- css,font,favicon -->
+    <link rel="stylesheet" href="css/mycss.css"></link>  
+    <link rel="icon" href="images/favicon.png"/>  
+    <link href="css/bootstrap.css" rel="stylesheet"></link>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link> 
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"></link>  <!-- ?why not works but its only for lookbook page -->
+</head>
+
+<body>
+    
+<nav class="navbar nomargin navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index">Kömys</a>
+        </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index">Home</a></li>
+      <li><a href="products">Jewellery</a></li>
+      <li><a href="lookbook">Lookbook</a></li>      
+      <li><a href="contacts">Contacts</a></li>      
+            
+      <li class="active"><a href="login">Login</a></li>
+      
+    </ul>
+    </div>
+</nav> 
+    
+<main>      
+	<div class="container-fluid">
+    	<div class="row">
+    		<div class="col-md-12 footer_social">
+    			<h4>Sign-up</h4>
+    		</div> 
+	
+		     <div class="col-md-12 footer_social">		     
+		     	<form th:object="${signupform}" th:action="@{/saveuser}" action="#" method="post" class="contact_form">
+		     	
+		     		<div class="genders">
+	            		<input type="radio" id="gender1" name="gender" value="M." th:field="*{gender}"/>
+	                    <label for="gender1">Mister</label>               
+	                    
+	                    <input type="radio" id="gender2" name="gender" value="Ms." th:field="*{gender}"/>
+	                    <label for="gender2">Miss</label>
+	                    
+	                    <p th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">gender Error</p>
+	                </div>
+	                <br/>
+		     		<div>
+						<label for="username"> Username :*<input type="text" id="username" th:field="*{username}" class="form-control" /></label>
+						<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</p>	
+					</div>
+					<div>
+						<label for="firstname"> Firstname :*<input type="text" id="firstname"  name="firstname" th:field="*{firstname}" class="form-control" placeholder="John"/></label>
+						<p th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">fname Error</p>	
+					</div>
+					<div>
+						<label for="lastname"> Lastname :*<input type="text" id="lastname"  name="lastname" th:field="*{lastname}" class="form-control" placeholder="Smith"/></label>
+						<p th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">lname Error</p>	
+					</div>					
+					 
+					<div class="widthdate">
+						<label for="db"> Date of birth:*<input type="date" id="db" name="db" th:field="*{db}" class="form-control"/></label>
+					</div> 
+						
+					<div>
+						<label for="pw1"> Password :*
+						<input type="password" id="pw1"  name="pw1" th:field="*{password}" class="form-control"
+						placeholder="abcdefG8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+						</label>
+						<span class="form_hint">Must contain at least one number and one uppercase and lowercase letter (min 8 characters)</span>
+						<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>	
+					</div>
+					<div>
+						<label for="pw2"> Re-type Password :*
+						<input type="password" id="pw2"  name="pw2" th:field="*{passwordCheck}" class="form-control"
+						pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+						</label>
+						<p th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}">Password Match Error</p>	
+					</div>
+					
+					<div>
+						<label for="email"> Email:* <input type="email" id="email"   th:field="*{email}" class="form-control" placeholder="john@gmail.com"/></label>
+						<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email error</p>	
+					</div>
+					<br/>
+					<input type="submit" class="btn btn-success" value="Signup"></input>		
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+<footer>
+
+    <div class="col-md-12 topmargin100">
+        <h3>Follow Us</h3>
+        <a href="#" target="_blank" title="Kömys on Facebook"><img src="images/facebook-icon.png" alt="Kömys on Facebook"/></a>
+        <a href="#" target="_blank" title="Kömys on Twitter"><img src="images/twitter-icon.png" alt="Closed Clique on Twitter"/></a>
+        <a href="#" target="_blank" title="Kömys on Picasa"><img src="images/picasa-icon.png" alt="Kömys on Picasa" /></a>
+        <a href="#" target="_blank" title="Kömys on Youtube"><img src="images/youtube-icon.png" alt="Kömys on Youtube" /></a>
+    </div><!--//footer_social-->
+    
+
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/1.js"></script>
+
+    
+</body>
+</html>

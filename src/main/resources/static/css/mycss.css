@@ -1,0 +1,180 @@
+.playfair{
+	font-family: 'Playfair Display', serif ;
+	font-size: 1.25em ;
+}
+.fullwidth{
+	width:100%;
+}
+.halfwidth{
+	width:50%;
+}
+.width100{
+	width:200px !important;
+}
+.widthshipping{
+    width:100px;    
+}
+.nomargin {
+	margin-bottom: 0px !important;
+}
+.topmargin{
+    margin-top: 30px;    
+}
+.topmargin100{
+    margin-top: 100px;    
+}
+.topmargin200{
+    margin-top: 200px;    
+}
+.toppadding{
+	padding-top: 30px;
+}
+.center{
+    text-align: center;
+}
+
+.earringsimg:hover {	
+	opacity: 0.5;
+}
+.cartimg{
+	width:80px;
+}
+.xs {
+	width:20px ;
+}
+.xs img{
+	width:15px;
+	margin-top: 20px;
+	/*margin-left: 40%;*/
+}
+
+.header-text {
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    top: 30vh;
+    width: 96vw;
+    font-size: 5vw;
+    color: #fff;
+    z-index: 2;
+    letter-spacing: 1em;
+    word-spacing: 0.1em !important;
+    line-height: 80%;
+    opacity: 0;
+    padding-left: 10vw;
+}
+
+input:invalid {
+    background-color: pink;
+    
+}
+.lookbookimg {
+    margin:30px 0px 30px 0px;
+    align-self: center !important;
+}
+
+/*contacts-------*/
+.contacts img{
+	width:20px;
+}
+#googlemap  {width:100%;
+                height:400px;			
+                border:solid 2px rgb(204,204,204);}	
+/*--------contacts end*/
+
+/*header--------*/
+header{
+	text-align:center;
+}
+/*----------header*/
+
+/*footer-----------*/
+footer{	
+	text-align: center ;
+	float: none ; 
+	font-family: 'Playfair Display', serif ;
+	font-size: 1.25em ;	
+}
+
+.footer_social { 
+	padding: 10px 0px 10px; 
+	text-align: center; 	
+}
+
+.footer_social img { float: none; margin: 0 6px; }
+
+footer a{
+	color:#000 ; 	
+	font-weight: normal !important;
+}
+
+div a .mailto{
+	margin-bottom: : 20px !important; 
+	
+}
+/*---------footer*/
+
+/*side menu*/
+.jtype{
+    background-color: #E7E7E7 !important;    
+}
+.jewellery li:hover{
+    background-color: #F8F8F8 !important;   
+}
+.jewellery li{
+ text-align: center;
+}
+
+/*side menu end*/
+
+.products img {
+	
+	margin-top: 10px;
+	
+}
+
+/*personal information*/
+
+.contact_form input {
+	
+}
+
+.contact_form select {
+
+    
+}
+
+input:hover {
+  border-color: lightskyblue;  
+}
+
+.form_hint {
+	background: #c0c0c0;
+	border-radius: 3px 3px 3px 3px;
+	color: white;
+	margin-left:8px;
+	margin-top:10px;
+	padding: 1px 10px;
+	z-index: 999; /* hints stay above all other elements */
+	position: absolute; /* allows proper formatting if hint is two lines */
+	/*display: none;*/
+	}
+
+.form_hint::before {
+	content: "\25C0"; /* left point triangle in escaped unicode */
+	color:#c0c0c0;
+	position: absolute;
+	top:1px;
+	left:-6px;
+	}
+
+.contact_form input:focus + .form_hint {display: inline;}
+
+.genders label {
+    
+    padding: 0px 20px 0px 0px;      
+}
+
+/*.widthdate input{
+	width:218px !important;
+}*/
+/*personal information end*/
